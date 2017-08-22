@@ -20,3 +20,8 @@ end
 get '/name/:first/?:last?' do |f,l|
     "I am #{f} #{l}"
 end
+
+#パラメータにワイルドカードを使用
+get '/from/*/to/*' do |f,t|
+    "From #{f},to #{t}"
+end
