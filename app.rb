@@ -9,5 +9,9 @@ get '/about' do
 end
 
 get '/hello/:name' do
-    "Hello, #{name}!"
+    "Hello, #{params[:name]}!"
+end
+
+get '/age/:num' do |n|
+    "You are #{n} years old!"
 end
