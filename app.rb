@@ -1,7 +1,7 @@
 require 'sinatra'
 require 'sinatra/reloader'
 get '/' do
-    "hello world"
+    "hello world!"
 end
 
 get '/about' do
@@ -24,4 +24,8 @@ end
 #パラメータにワイルドカードを使用
 get '/from/*/to/*' do |f,t|
     "From #{f},to #{t}"
+end
+#正規表現の利用
+get %r{/id/([0-9]*)} do |i|
+    "Your ID is #{i}"
 end
