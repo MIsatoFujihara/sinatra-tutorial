@@ -7,5 +7,5 @@ end
 
 get '/:name' do |n|
     @name=n
-    erb :index
+    erb :index2
 end
