@@ -7,3 +7,7 @@ end
 get '/about' do
     "about this site page"
 end
+
+get '/hello/:name' do
+    "Hello, #{name}!"
+end
