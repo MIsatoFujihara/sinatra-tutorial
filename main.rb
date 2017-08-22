@@ -6,7 +6,7 @@ get '/' do
     erb :index
 end
 
-get '/:name' do |n|
+get '/name/:name' do |n|
     @name=n
     # 遠隔的に操作
     @title="main_index"
@@ -18,6 +18,6 @@ get '/about' do
     # 遠隔的に操作
     @title="main_index"
     @content="this page is"
-    @email = "fujiharaionn@mai.com"
+    @email = "fujiharaionn@gmail.com"
     erb :about
 end
