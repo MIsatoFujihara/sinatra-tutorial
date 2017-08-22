@@ -10,7 +10,11 @@ after do
     logger.info"page diplayed sucessfully"
 end
 
-
+helpers do
+    def strong(s)
+        "<strong>#{s}</strong>"
+    end
+end
 
 # htmlファイルを呼び出す
 get '/' do
@@ -21,7 +25,7 @@ get '/name/:name' do |n|
     @name=n
     # 遠隔的に操作
     @title="main_index"
-    @content="main content by"+@author
+    @content="main content by"+strong(@author)
     erb :index2
 end
 
