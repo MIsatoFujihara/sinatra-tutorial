@@ -15,3 +15,8 @@ end
 get '/age/:num' do |n|
     "You are #{n} years old!"
 end
+
+#オプションとしてのパラメータ
+get '/name/:first/?:last?' do |f,l|
+    "I am #{f} #{l}"
+end
