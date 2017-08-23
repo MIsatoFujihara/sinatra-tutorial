@@ -18,5 +18,18 @@
     <form method="post" action="/new">
         <input type ="text" name="body"><input type = "submit" value = "post!">
     </form>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+    <script>
+        $('.deleteCmd').click(function(){
+            var el = $(this).parent();
+            if(confirm('Are you sure to delete?')){
+                $post('/delete',{
+                    id :ek.data('id')
+                },function(){
+                    el.fadeOut(800);
+                })
+            }
+        })
+    </script>
 </body>
 </html>
