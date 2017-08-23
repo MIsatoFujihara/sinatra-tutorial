@@ -16,3 +16,8 @@ get '/' do
     erb :index_bullet
 end
 
+post '/new' do
+    Comment.create({:body => params[:body]})
+    redirect '/'
+end
+
