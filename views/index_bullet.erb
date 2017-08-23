@@ -11,9 +11,9 @@
     <u1>
       <% @comments.each do |comment| %>
         <!li data-id="<%= comment.id %>">
-        <table><tbody><tr>
+        <table data-id="<%= comment.id %>"><tbody><tr>
           <td width="500"><%= h comment.body %></td> <td width="100">by <%= h comment.author %></td>
-          <td><span class="deleteCmd" style="cursor:pointer;color:blue">[×]</span></td>
+          <td><span class="deleteCmd" style="cursor:pointer;color:blue">[delete]</span></td>
         </tr></tbody></table>
         <!/li>
       <% end %>
@@ -26,11 +26,14 @@
   <script>
     $('.deleteCmd') .click(function(){
         var el = $(this).parent();
+        var el2 = el.parent();
+        var el3 = el2.parent();
+        var el4 = el3.parent();
         if (confirm('are you sure to delete?')){
             $.post('/delete',{
-                id: el.data('id')
+                id: el4.data('id')
             }, function() {
-                   el.fadeOut(800);
+                   el4.fadeOut(800);
             });
         }
     })
