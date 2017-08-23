@@ -21,10 +21,11 @@ end
 
 post '/new' do
   Comment.create(:body => params[:body],:author => params[:author])
-  #Comment.create({:body => params[:author]})
+  #Comment.create({:author => params[:author]})
   redirect '/'
 end
 
 post '/delete' do
   Comment.find(params[:id]).destroy
  end
+ 
