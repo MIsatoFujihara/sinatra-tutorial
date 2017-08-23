@@ -8,7 +8,11 @@ ActiveRecord::Base.establish_connection(
 
 )
 
+class Comment < ActiveRecord::Base
+end
+
 get '/' do
+    @comment = Comment.order("id desc").all
     erb :index
 end
 
