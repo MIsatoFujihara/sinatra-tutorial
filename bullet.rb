@@ -4,7 +4,7 @@ require 'active_record'
 
 ActiveRecord::Base.establish_connection(
     "adapter" => "sqlite3",
-    "datebase" => "./bbs.db"
+    "database" => "./bbs.db"
 
 )
 
@@ -13,6 +13,6 @@ end
 
 get '/' do
     @comments = Comment.order("id desc").all
-    erb :index
+    erb :index_bullet
 end
 
