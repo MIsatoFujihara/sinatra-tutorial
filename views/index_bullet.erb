@@ -8,7 +8,7 @@
     <h1>BBS</h1>
     <u1>
         <% @comments.each do |comment| %>
-        <li data-id="<% @comments.id %>">
+        <li data-id="<% comment.id %>">
             <%= comment.body %>
         </li>
         <% end %>
