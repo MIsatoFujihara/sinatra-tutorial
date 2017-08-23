@@ -10,7 +10,7 @@
         <% @comments.each do |comment| %>
             <li data-id="<%= comment.id %>">
                 <%= comment.body %>
-                <span class="deleteCmd" style="cursor:pointer;color:blue">[x]</span>
+                <span class="deleteCmd" style="cursor:pointer;color:blue">[×]</span>
             </li>
         <% end %>
     </u1>
@@ -27,7 +27,7 @@
                     id: el.data('id')
                 }, function() {
                     el.fadeOut(800);
-                })
+                });
             }
         })
     </script>
