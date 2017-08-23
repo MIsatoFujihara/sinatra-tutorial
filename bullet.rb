@@ -12,7 +12,7 @@ class Comment < ActiveRecord::Base
 end
 
 get '/' do
-    @comment = Comment.order("id desc").all
+    @comments = Comment.order("id desc").all
     erb :index
 end
 
