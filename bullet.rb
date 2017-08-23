@@ -7,6 +7,11 @@ ActiveRecord::Base.establish_connection(
     "database" => "./bbs.db"
 
 )
+# エスケープのための決まり文句らしい
+helpers do
+    include Rack::Utils
+    alias_method :h, :escape_html
+end
 
 class Comment < ActiveRecord::Base
 end
