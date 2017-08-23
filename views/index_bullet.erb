@@ -10,10 +10,12 @@
   <h1>BBS</h1>
     <u1>
       <% @comments.each do |comment| %>
-        <li data-id="<%= comment.id %>">
-          <%= h comment.body %>  by <%= h comment.author %>
-            <span class="deleteCmd" style="cursor:pointer;color:blue">[×]</span>
-        </li>
+        <!li data-id="<%= comment.id %>">
+        <table><tbody><tr>
+          <td width="500"><%= h comment.body %></td> <td width="100">by <%= h comment.author %></td>
+          <td><span class="deleteCmd" style="cursor:pointer;color:blue">[×]</span></td>
+        </tr></tbody></table>
+        <!/li>
       <% end %>
     </u1>
     <h2>Add new</h2>
